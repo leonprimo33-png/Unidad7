@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Savings.Hub: tecnología, accesorios y perfumes. Encontrá tus productos favoritos.">
+  <title>Savings.Hub | Tienda online</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="encabezado">
+    <nav class="nav contenedor">
+      <a class="logo" href="#" aria-label="Savings Hub, inicio">SAVINGS<span>.HUB</span></a>
+      <a class="nav-link" href="#catalogo">Catálogo</a>
+    </nav>
+    <section class="hero contenedor">
+      <div class="hero-texto">
+        <p class="etiqueta">TECNOLOGÍA · ACCESORIOS · PERFUMES</p>
+        <h1>Encontrá eso que<br><span>estabas buscando.</span></h1>
+        <p>Una selección de productos para acompañarte todos los días.</p>
+        <a class="boton boton-claro" href="#catalogo">Ver productos</a>
+      </div>
+      <div class="hero-sello" aria-hidden="true">
+        <span>ESTILO</span>
+        <strong>HUB</strong>
+        <span>Y BUENOS PRECIOS</span>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="seccion catalogo contenedor" id="catalogo">
+      <div class="titulo-seccion">
+        <div>
+          <p class="etiqueta">NUESTRO CATÁLOGO</p>
+          <h2>Productos destacados</h2>
+        </div>
+        <p class="subtitulo">Explorá, buscá y administrá los productos.</p>
+      </div>
+
+      <section class="panel-controles" aria-label="Herramientas del catálogo">
+        <div class="campo campo-busqueda">
+          <label for="buscador">Buscar producto</label>
+          <input id="buscador" type="search" placeholder="Escribí un nombre o categoría..." autocomplete="off">
+        </div>
+        <div class="campo">
+          <label for="filtro-categoria">Categoría</label>
+          <select id="filtro-categoria">
+            <option value="todos">Todas las categorías</option>
+            <option value="Fundas">Fundas</option>
+            <option value="Celulares">Celulares</option>
+            <option value="Cargadores">Cargadores</option>
+            <option value="Perfumes">Perfumes</option>
+          </select>
+        </div>
+      </section>
+
+      <p id="estado-busqueda" class="texto-resultados" aria-live="polite"></p>
+      <div id="contenedor-items" class="grilla-productos"></div>
+      <p id="mensaje-vacio" class="mensaje-vacio" hidden>No se encontraron productos. Probá con otra búsqueda.</p>
+    </section>
+
+    <section class="seccion seccion-agregar">
+      <div class="contenedor">
+        <div class="titulo-seccion">
+          <div>
+            <p class="etiqueta">ADMINISTRACIÓN</p>
+            <h2>Agregar un producto</h2>
+          </div>
+          <p class="subtitulo">Completá los datos para sumarlo al catálogo.</p>
+        </div>
+
+        <form id="form-producto" class="formulario">
+          <div class="campo">
+            <label for="nombre">Nombre del producto</label>
+            <input id="nombre" name="nombre" type="text" maxlength="50" placeholder="Ej. Funda transparente" required>
+          </div>
+          <div class="campo">
+            <label for="precio">Precio ($)</label>
+            <input id="precio" name="precio" type="number" min="1" step="1" placeholder="Ej. 15000" required>
+          </div>
+          <div class="campo">
+            <label for="categoria">Categoría</label>
+            <select id="categoria" name="categoria" required>
+              <option value="">Elegí una categoría</option>
+              <option value="Fundas">Fundas</option>
+              <option value="Celulares">Celulares</option>
+              <option value="Cargadores">Cargadores</option>
+              <option value="Perfumes">Perfumes</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="descripcion">Descripción</label>
+            <input id="descripcion" name="descripcion" type="text" maxlength="100" placeholder="Breve descripción" required>
+          </div>
+          <button class="boton boton-principal boton-agregar" type="submit">+ Agregar producto</button>
+        </form>
+        <p id="mensaje-feedback" class="feedback" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor footer-interior">
+      <a class="logo logo-footer" href="#">SAVINGS<span>.HUB</span></a>
+      <p>Proyecto educativo · Interfaz dinámica con DOM y eventos</p>
+    </div>
+  </footer>
+</body>
+</html>
